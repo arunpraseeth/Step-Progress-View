@@ -96,7 +96,6 @@ class StepProgressView extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: index == listLength - 1 ? 10 : 0),
       ],
     );
   }
