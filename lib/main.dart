@@ -1,50 +1,34 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Stepper Progress View',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: StepProgressView(),
-    );
-  }
-}
-
 class StepProgressView extends StatelessWidget {
   final double circleWidth;
   final double circleHeight;
   final double progressLineWidth;
   final double progressLineHeight;
   final double circleBorder;
-  final VoidCallback? onTap;
+  final VoidCallback onTap;
   final Color fillColor;
   final Color strokeColor;
+  final String time;
   final String title;
   final String subTitle;
   final int index;
   final int listLength;
 
   StepProgressView({
-    this.circleWidth = 30,
-    this.circleHeight = 30,
-    this.progressLineWidth = 4,
-    this.progressLineHeight = 40,
-    this.circleBorder = 3,
-    this.fillColor = Colors.white,
-    this.strokeColor = Colors.grey,
-    this.title = "Title",
-    this.subTitle = "Sub Title",
-    this.index = 1,
-    this.listLength = 1,
-    this.onTap,
+    required this.circleWidth,
+    required this.circleHeight,
+    required this.progressLineWidth,
+    required this.progressLineHeight,
+    required this.circleBorder,
+    required this.fillColor,
+    required this.strokeColor,
+    required this.time,
+    required this.title,
+    required this.subTitle,
+    required this.index,
+    required this.listLength,
+    required this.onTap,
   });
 
   @override
@@ -112,6 +96,7 @@ class StepProgressView extends StatelessWidget {
             ],
           ),
         ),
+        SizedBox(height: index == listLength - 1 ? 10 : 0),
       ],
     );
   }
